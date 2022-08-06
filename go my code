@@ -1,0 +1,108 @@
+FUNCTION Dot_product (vAR t1 , VAR t2 : ARRAY-OF-REAL) 
+   VAR
+    N ,i : INTEGER ;   
+    ps : FLOAT ;  
+
+BEGIN
+  
+
+   ps :=0.0 ;
+   N=t1.length 
+
+   while (N1 = t2.length) do 
+        for i from 0  to N-1 DO
+            ps := ps + x1[i]*x2(i]
+      end for 
+   end_while 
+
+    return  ps ;
+END
+
+ALGORITHME orthogonal 
+VAR 
+t1 : ARRAY_of_REAL [N];
+t2 : ARRAY_of_REAL [N];
+N , i , j  : INTEGER ;
+ortho : FLOAT ;
+
+BEGIN
+    for i from 0 to t1.length do 
+        write ("enter an element in the array t1 ") ;
+        read (t1[i])
+    end for 
+
+     for i from 0 to t2.length do 
+        write ("enter an element in the array t2 ") ;
+        read (t2[i])
+    end for 
+
+     for  i from 0 to t1.length DO 
+        for j=0 to t2.length    DO 
+           if (Dot_product(t1[i],t2[j])==0) do 
+               write ("wo vectors of given IR are orthogonal" );
+           else 
+               write ("wo vectors of given IR are not  orthogona")  
+          end if
+         end for
+     end for     
+     ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+PROCEDURE swap(VAR xp, VAR yp : INTEGER)
+VAR
+   tmp : INTEGER;
+BEGIN
+  tmp := xp;
+  xp := yp;
+  yp := tmp;
+END
+/* *** selection sort *** */
+
+PROCEDURE selection_sort(VAR tab : ARRAY_OF INTEGER)
+VAR
+   i,j,min_idx,n : INTEGER;
+BEGIN
+   n := tab.length;
+   FOR i FROM 0 TO n-2 STEP 1  DO
+       min_idx := i;
+       FOR j  FROM i  TO n-i-2 STEP 1  DO
+           IF (tab[j]<tab[min_idx]) THEN
+               min_idx := j;
+           END_IF
+       END_FOR
+   swap(arr[min_idx],arr[i])
+   END_FOR
+END
+
+
+ALGORITHME insert_tri 
+VAR
+T : ARRAY_of_REAL [N];
+N , key , pos,i : INTEGER ;
+
+BEGIN
+write ("entry the size for array" )
+read (N)
+write ("please enter the elements of the table")
+  for i from 0 to N step 1 do 
+   write ("T[i] =" )
+   read (T[i])
+write ("please enter the insert  value) 
+read (key)
+write ("tntry the pos ")
+read (pos)
+if (pos<=0 or pos > N+1) do
+    write ("impossible")
+else 
+    for i from N into pos step -1  do
+        T[i]= T[i-1];
+    end for 
+T[pos-1]=key ;
+N ++
+write ("the elements of the array after insertion are")
+   for i from 0 to N step 1  do
+   write ("T[i]" = T [i]) ; 
+   end for 
+end if  
+write ("the sorted array  is ")
+selection_sort (T);
+END
